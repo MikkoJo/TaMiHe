@@ -1,4 +1,5 @@
-package com.school.project;
+package fi.amiedu.realestateprojct;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
