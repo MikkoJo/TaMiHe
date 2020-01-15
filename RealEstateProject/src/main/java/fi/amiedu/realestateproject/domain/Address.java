@@ -1,6 +1,6 @@
-package fi.amiedu.realestateprojct.domain;
+package fi.amiedu.realestateproject.domain;
 
-import fi.amiedu.realestateprojct.util.Point;
+import fi.amiedu.realestateproject.util.Point;
 
 public class Address {
 	private String streetName;

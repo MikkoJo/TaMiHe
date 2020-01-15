@@ -1,4 +1,4 @@
-package fi.amiedu.realestateprojct;
+package fi.amiedu.realestateproject;
 
 
 import org.springframework.boot.SpringApplication;

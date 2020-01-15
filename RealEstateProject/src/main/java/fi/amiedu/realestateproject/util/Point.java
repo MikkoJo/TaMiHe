@@ -1,4 +1,4 @@
-package fi.amiedu.realestateprojct.util;
+package fi.amiedu.realestateproject.util;
 
 // Point coordinates in EPSG:3857
 public class Point {

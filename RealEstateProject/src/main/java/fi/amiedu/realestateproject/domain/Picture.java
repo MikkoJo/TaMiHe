@@ -1,4 +1,4 @@
-package fi.amiedu.realestateprojct.domain;
+package fi.amiedu.realestateproject.domain;
 
 public class Picture {
 	private String desc;
