@@ -1,4 +1,4 @@
-package com.school.project;
+package fi.amiedu.realestateproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
