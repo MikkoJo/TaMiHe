@@ -1,7 +1,11 @@
 package fi.amiedu.realestateproject.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+
+//@Entity
 public abstract class Property {
 
 	private Lot lot;
@@ -9,62 +13,78 @@ public abstract class Property {
 	private List<Picture> pictures;
 	private Picture floorPlan;
 	private String prize;
-	private float area;
+	private double area;
 	private String desc;
-	
-	
-	public Property(Lot lot, Address address, List<Picture> pictures, Picture floorPlan, String prize, float area,
-			String desc) {
+
+	public Property(Lot lot, Address address, String prize, double area, String desc) {
 		this.lot = lot;
 		this.address = address;
-		this.pictures = pictures;
-		this.floorPlan = floorPlan;
+		this.pictures = new ArrayList<>();
+		this.floorPlan = new Picture();
 		this.prize = prize;
 		this.area = area;
 		this.desc = desc;
 	}
+
+	public Property() {
+	}
+
 	public Lot getLot() {
 		return lot;
 	}
+
 	public void setLot(Lot lot) {
 		this.lot = lot;
 	}
+
 	public Address getAddress() {
 		return address;
 	}
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
 	public List<Picture> getPictures() {
 		return pictures;
 	}
+
 	public void setPictures(List<Picture> pictures) {
 		this.pictures = pictures;
 	}
+
 	public Picture getFloorPlan() {
 		return floorPlan;
 	}
+
 	public void setFloorPlan(Picture floorPlan) {
 		this.floorPlan = floorPlan;
 	}
+
 	public String getPrize() {
 		return prize;
 	}
+
 	public void setPrize(String prize) {
 		this.prize = prize;
 	}
-	public float getArea() {
+
+	public double getArea() {
 		return area;
 	}
-	public void setArea(float area) {
+
+	public void setArea(double area) {
 		this.area = area;
 	}
+
 	public String getDesc() {
 		return desc;
 	}
+
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -104,5 +124,5 @@ public abstract class Property {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

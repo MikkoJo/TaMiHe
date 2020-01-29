@@ -10,7 +10,7 @@ public class Address {
 	private String zipCode;
 	private String country;
 	private Point coordinates;
-	
+
 	public Address(String streetName, String houseNumber, String doorNumber, String city, String zipCode,
 			String country, Point coordinates) {
 		super();
@@ -22,48 +22,66 @@ public class Address {
 		this.country = country;
 		this.coordinates = coordinates;
 	}
+	
+	public Address() {
+	}
+
 	public String getStreetName() {
 		return streetName;
 	}
+
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}
+
 	public String getHouseNumber() {
 		return houseNumber;
 	}
+
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
+
 	public String getDoorNumber() {
 		return doorNumber;
 	}
+
 	public void setDoorNumber(String doorNumber) {
 		this.doorNumber = doorNumber;
 	}
+
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getZipCode() {
 		return zipCode;
 	}
+
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+
 	public String getCountry() {
 		return country;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public Point getCoordinates() {
 		return coordinates;
 	}
+
 	public void setCoordinates(Point coordinates) {
 		this.coordinates = coordinates;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -105,9 +123,5 @@ public class Address {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
 
 }
