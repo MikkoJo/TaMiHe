@@ -4,14 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-//@Entity
+@Entity
 public abstract class Property {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id; 
+
+	@OneToOne
+	@JoinColumn(name="lot_id", referencedColumnName = "id")
 	private Lot lot;
+	
+	@OneToOne
+	@JoinColumn(name="address_id", referencedColumnName = "id")
 	private Address address;
+	
+	@OneToMany
+	@JoinColumn(name="property_id")
 	private List<Picture> pictures;
-	private Picture floorPlan;
+	
+//	@OneToMany(mappedBy="property")
+	@OneToMany
+	@JoinColumn(name="property_id")
+	private List<Picture> floorPlans;
 	private String prize;
 	private double area;
 	private String desc;
@@ -20,7 +42,7 @@ public abstract class Property {
 		this.lot = lot;
 		this.address = address;
 		this.pictures = new ArrayList<>();
-		this.floorPlan = new Picture();
+		this.floorPlans = new ArrayList<>();
 		this.prize = prize;
 		this.area = area;
 		this.desc = desc;
@@ -53,12 +75,12 @@ public abstract class Property {
 		this.pictures = pictures;
 	}
 
-	public Picture getFloorPlan() {
-		return floorPlan;
+	public List<Picture> getFloorPlans() {
+		return floorPlans;
 	}
 
-	public void setFloorPlan(Picture floorPlan) {
-		this.floorPlan = floorPlan;
+	public void setFloorPlans(List<Picture> floorPlans) {
+		this.floorPlans = floorPlans;
 	}
 
 	public String getPrize() {
@@ -104,9 +126,9 @@ public abstract class Property {
 			builder.append(pictures);
 			builder.append(", ");
 		}
-		if (floorPlan != null) {
-			builder.append("floorPlan=");
-			builder.append(floorPlan);
+		if (floorPlans != null) {
+			builder.append("floorPlans=");
+			builder.append(floorPlans);
 			builder.append(", ");
 		}
 		if (prize != null) {

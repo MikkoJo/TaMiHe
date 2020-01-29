@@ -2,6 +2,9 @@ package fi.amiedu.realestateproject.domain;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Apartment extends Property {
 
 	private int floor;
@@ -17,7 +20,10 @@ public class Apartment extends Property {
 		this.elevator = elevator;
 		this.balcony = balcony;
 	}
-
+	
+	public Apartment() {
+		super();
+	}
 	public int getFloor() {
 		return floor;
 	}

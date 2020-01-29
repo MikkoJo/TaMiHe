@@ -1,19 +1,37 @@
 package fi.amiedu.realestateproject.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 import fi.amiedu.realestateproject.util.Point;
 
+@Entity
 public class Address {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id; 
+
+	@OneToOne(mappedBy = "address")
+	private Property property;
 	private String streetName;
 	private String houseNumber;
 	private String doorNumber;
 	private String city;
 	private String zipCode;
 	private String country;
+	@OneToOne
+	@JoinColumn(name="point_id")
 	private Point coordinates;
 
-	public Address(String streetName, String houseNumber, String doorNumber, String city, String zipCode,
+	public Address(Property property, String streetName, String houseNumber, String doorNumber, String city, String zipCode,
 			String country, Point coordinates) {
 		super();
+		this.property = property;
 		this.streetName = streetName;
 		this.houseNumber = houseNumber;
 		this.doorNumber = doorNumber;
@@ -24,6 +42,22 @@ public class Address {
 	}
 	
 	public Address() {
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Property getProperty() {
+		return property;
+	}
+
+	public void setProperty(Property property) {
+		this.property = property;
 	}
 
 	public String getStreetName() {
