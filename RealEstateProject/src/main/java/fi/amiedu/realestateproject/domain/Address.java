@@ -18,9 +18,9 @@ public class Address {
 
 	@OneToOne(mappedBy = "address")
 	private Property property;
-	private String streetName;
-	private String houseNumber;
-	private String doorNumber;
+	private String streetAddress;
+//	private String houseNumber;
+//	private String doorNumber;
 	private String city;
 	private String zipCode;
 	private String country;
@@ -28,13 +28,13 @@ public class Address {
 	@JoinColumn(name="point_id")
 	private Point coordinates;
 
-	public Address(Property property, String streetName, String houseNumber, String doorNumber, String city, String zipCode,
-			String country, Point coordinates) {
+	public Address(Property property, String streetAddress/*, String houseNumber, String doorNumber*/,
+			String city, String zipCode, String country, Point coordinates) {
 		super();
 		this.property = property;
-		this.streetName = streetName;
-		this.houseNumber = houseNumber;
-		this.doorNumber = doorNumber;
+		this.streetAddress = streetAddress;
+//		this.houseNumber = houseNumber;
+//		this.doorNumber = doorNumber;
 		this.city = city;
 		this.zipCode = zipCode;
 		this.country = country;
@@ -60,14 +60,14 @@ public class Address {
 		this.property = property;
 	}
 
-	public String getStreetName() {
-		return streetName;
+	public String getStreetAddress() {
+		return streetAddress;
 	}
 
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
+	public void setStreetAddress(String streetAddress) {
+		this.streetAddress = streetAddress;
 	}
-
+/*
 	public String getHouseNumber() {
 		return houseNumber;
 	}
@@ -83,7 +83,7 @@ public class Address {
 	public void setDoorNumber(String doorNumber) {
 		this.doorNumber = doorNumber;
 	}
-
+*/
 	public String getCity() {
 		return city;
 	}
@@ -120,11 +120,12 @@ public class Address {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Address [");
-		if (streetName != null) {
-			builder.append("streetName=");
-			builder.append(streetName);
+		if (streetAddress != null) {
+			builder.append("streetAddress=");
+			builder.append(streetAddress);
 			builder.append(", ");
 		}
+		/*
 		if (houseNumber != null) {
 			builder.append("houseNumber=");
 			builder.append(houseNumber);
@@ -135,6 +136,7 @@ public class Address {
 			builder.append(doorNumber);
 			builder.append(", ");
 		}
+		*/
 		if (city != null) {
 			builder.append("city=");
 			builder.append(city);

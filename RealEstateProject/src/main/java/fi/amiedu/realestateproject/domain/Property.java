@@ -18,10 +18,10 @@ public abstract class Property {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id; 
 
-	@OneToOne
+/*	@OneToOne
 	@JoinColumn(name="lot_id", referencedColumnName = "id")
 	private Lot lot;
-	
+*/	
 	@OneToOne
 	@JoinColumn(name="address_id", referencedColumnName = "id")
 	private Address address;
@@ -38,8 +38,8 @@ public abstract class Property {
 	private double area;
 	private String desc;
 
-	public Property(Lot lot, Address address, String prize, double area, String desc) {
-		this.lot = lot;
+	public Property(/*Lot lot,*/ Address address, String prize, double area, String desc) {
+		/*this.lot = lot;*/
 		this.address = address;
 		this.pictures = new ArrayList<>();
 		this.floorPlans = new ArrayList<>();
@@ -50,7 +50,7 @@ public abstract class Property {
 
 	public Property() {
 	}
-
+/*
 	public Lot getLot() {
 		return lot;
 	}
@@ -58,7 +58,7 @@ public abstract class Property {
 	public void setLot(Lot lot) {
 		this.lot = lot;
 	}
-
+*/
 	public Address getAddress() {
 		return address;
 	}
@@ -111,11 +111,13 @@ public abstract class Property {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Property [");
+/*
 		if (lot != null) {
 			builder.append("lot=");
 			builder.append(lot);
 			builder.append(", ");
 		}
+*/
 		if (address != null) {
 			builder.append("address=");
 			builder.append(address);

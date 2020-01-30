@@ -7,14 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Entity
+//@Entity
 public class Lot {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@OneToOne(mappedBy = "lot")
+//	@OneToOne(mappedBy = "lot")
 	private Property property;
 	
 	// TODO: More attributes, now just mock class
