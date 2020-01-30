@@ -39,16 +39,16 @@ public abstract class Property {
 	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinColumn(name="property_id")
 	private List<Picture> floorPlans;
-	private String prize;
+	private double price;
 	private double area;
 	private String desc;
 
-	public Property(/*Lot lot,*/ Address address, String prize, double area, String desc) {
+	public Property(/*Lot lot,*/ Address address, double price, double area, String desc) {
 		/*this.lot = lot;*/
 		this.address = address;
 		this.pictures = new ArrayList<>();
 		this.floorPlans = new ArrayList<>();
-		this.prize = prize;
+		this.price = price;
 		this.area = area;
 		this.desc = desc;
 	}
@@ -96,12 +96,12 @@ public abstract class Property {
 		this.floorPlans = floorPlans;
 	}
 
-	public String getPrize() {
-		return prize;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setPrize(String prize) {
-		this.prize = prize;
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	public double getArea() {
@@ -146,11 +146,9 @@ public abstract class Property {
 //			builder.append(floorPlans);
 //			builder.append(", ");
 //		}
-		if (prize != null) {
-			builder.append("prize=");
-			builder.append(prize);
-			builder.append(", ");
-		}
+		builder.append("price=");
+		builder.append(price);
+		builder.append(", ");
 		builder.append("area=");
 		builder.append(area);
 		builder.append(", ");
