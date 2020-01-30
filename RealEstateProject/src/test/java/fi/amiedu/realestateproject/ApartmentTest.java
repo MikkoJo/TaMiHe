@@ -29,7 +29,7 @@ class ApartmentTest {
 	void setUp() throws Exception {
 		Address addr = new Address("Valimotie 8-10 13", "Helsinki", "00380", "Finland", new Point(1,1));
 //		Lot lot = new Lot("Under construction");
-		apar = new Apartment(addr, "150 000", 54.2, "Cool Apartment", 3, 5, true, true);
+		apar = new Apartment(addr, 150000, 54.2, "Cool Apartment", 3, 5, true, true);
 		Resource resource = new ClassPathResource("static/test.jpg");
 
 		input = resource.getInputStream();
