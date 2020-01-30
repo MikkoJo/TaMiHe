@@ -22,7 +22,7 @@ public class Picture {
 //	private Property property;
 	
 
-	public Picture(String desc, byte[] file, Property property) {
+	public Picture(String desc, byte[] file/*, Property property*/) {
 		super();
 		this.desc = desc;
 		this.file = file;

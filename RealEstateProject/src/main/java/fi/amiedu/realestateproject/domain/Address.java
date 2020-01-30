@@ -16,8 +16,8 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id; 
 
-	@OneToOne(mappedBy = "address")
-	private Property property;
+//	@OneToOne(mappedBy = "address")
+//	private Property property;
 	private String streetAddress;
 //	private String houseNumber;
 //	private String doorNumber;
@@ -28,10 +28,10 @@ public class Address {
 	@JoinColumn(name="point_id")
 	private Point coordinates;
 
-	public Address(Property property, String streetAddress/*, String houseNumber, String doorNumber*/,
+	public Address(/*Property property,*/ String streetAddress/*, String houseNumber, String doorNumber*/,
 			String city, String zipCode, String country, Point coordinates) {
 		super();
-		this.property = property;
+//		this.property = property;
 		this.streetAddress = streetAddress;
 //		this.houseNumber = houseNumber;
 //		this.doorNumber = doorNumber;
@@ -51,7 +51,7 @@ public class Address {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+/*
 	public Property getProperty() {
 		return property;
 	}
@@ -59,7 +59,7 @@ public class Address {
 	public void setProperty(Property property) {
 		this.property = property;
 	}
-
+*/
 	public String getStreetAddress() {
 		return streetAddress;
 	}
