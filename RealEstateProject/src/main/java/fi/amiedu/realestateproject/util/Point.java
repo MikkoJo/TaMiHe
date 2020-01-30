@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.transaction.annotation.Transactional;
+
 
 // Point coordinates in EPSG:3857
 @Entity
@@ -68,5 +70,9 @@ public class Point {
 		this.z = z;
 	}
 	
+	@Override
+	public String toString() {
+		return "Point [" + (id != null ? "id=" + id + ", " : "") + "x=" + x + ", y=" + y + "]";
+	}
 	
 }

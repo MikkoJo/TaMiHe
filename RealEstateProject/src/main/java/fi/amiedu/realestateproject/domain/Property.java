@@ -3,13 +3,17 @@ package fi.amiedu.realestateproject.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.springframework.transaction.annotation.Transactional;
 
 @Entity
 public abstract class Property {
@@ -22,16 +26,17 @@ public abstract class Property {
 	@JoinColumn(name="lot_id", referencedColumnName = "id")
 	private Lot lot;
 */	
-	@OneToOne
+//	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="address_id", referencedColumnName = "id")
 	private Address address;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinColumn(name="property_id")
 	private List<Picture> pictures;
 	
 //	@OneToMany(mappedBy="property")
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinColumn(name="property_id")
 	private List<Picture> floorPlans;
 	private String prize;
@@ -61,6 +66,14 @@ public abstract class Property {
 */
 	public Address getAddress() {
 		return address;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public void setAddress(Address address) {
@@ -123,16 +136,16 @@ public abstract class Property {
 			builder.append(address);
 			builder.append(", ");
 		}
-		if (pictures != null) {
-			builder.append("pictures=");
-			builder.append(pictures);
-			builder.append(", ");
-		}
-		if (floorPlans != null) {
-			builder.append("floorPlans=");
-			builder.append(floorPlans);
-			builder.append(", ");
-		}
+//		if (pictures != null) {
+//			builder.append("pictures=");
+//			builder.append(pictures);
+//			builder.append(", ");
+//		}
+//		if (floorPlans != null) {
+//			builder.append("floorPlans=");
+//			builder.append(floorPlans);
+//			builder.append(", ");
+//		}
 		if (prize != null) {
 			builder.append("prize=");
 			builder.append(prize);

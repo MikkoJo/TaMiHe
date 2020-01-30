@@ -1,11 +1,15 @@
 package fi.amiedu.realestateproject.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import org.springframework.transaction.annotation.Transactional;
 
 import fi.amiedu.realestateproject.util.Point;
 
@@ -24,7 +28,8 @@ public class Address {
 	private String city;
 	private String zipCode;
 	private String country;
-	@OneToOne
+//	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="point_id")
 	private Point coordinates;
 
@@ -153,8 +158,8 @@ public class Address {
 			builder.append(", ");
 		}
 		if (coordinates != null) {
-			builder.append("coordinates=");
-			builder.append(coordinates);
+//			builder.append("coordinates=");
+			builder.append(getCoordinates());
 		}
 		builder.append("]");
 		return builder.toString();
