@@ -15,6 +15,8 @@ import fi.amiedu.realestateproject.service.ApartmentService;
 
 //import fi.amiedu.realestateproject.service.ApartmentService;
 
+//http://localhost:8080/apartments
+
 @RestController
 public class ApartmentController {
 
@@ -25,7 +27,14 @@ public class ApartmentController {
 			value = "/apartments", // consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<Apartment,Address> getAddresses() {
-		return apartmentService.Addresses();
+		return apartmentService.getApartments();
 	}
+	
+//	@RequestMapping(method = RequestMethod.GET, // HTTP GET
+//			value = "/apartments", // consumes = MediaType.APPLICATION_JSON_VALUE,
+//			produces = MediaType.APPLICATION_JSON_VALUE)
+//	public Map<Apartment,Address> getAddresses() {
+//		return apartmentService.getAddresses();
+//	}
 
 }
