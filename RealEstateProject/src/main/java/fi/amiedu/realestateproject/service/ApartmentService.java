@@ -1,13 +1,8 @@
 package fi.amiedu.realestateproject.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.Iterator;
 import org.springframework.stereotype.Component;
-
 import fi.amiedu.realestateproject.domain.Address;
 import fi.amiedu.realestateproject.domain.Apartment;
 import fi.amiedu.realestateproject.util.Point;
@@ -15,6 +10,8 @@ import fi.amiedu.realestateproject.util.Point;
 @Component
 public class ApartmentService {
 	// Create a list of apartments	
+	
+	public HashMap<String, Apartment> apartmentMap = new HashMap<String, Apartment>();
 	
 		Address add1 = new Address("Peräjänkuja", "Vantaa", "01760", "Suomi", new Point(1, 21));
 		Address add2 = new Address("Reunatie 81", "Vantaa", "01790", "Suomi", new Point(22, 36));
@@ -32,19 +29,45 @@ public class ApartmentService {
 		Apartment apa7 = new Apartment(add7, 2000000, 170000.0d, "Kerrostalo", 5, 5, true, true);
 		
 		
-		public Map getApartments() {
-		Map<Integer, Apartment> apartmentMap = new HashMap();
-		apartmentMap.put(1, apa1);
-		apartmentMap.put(2, apa2);
-		apartmentMap.put(3, apa3);
-		apartmentMap.put(4, apa4);
-		apartmentMap.put(5, apa5);
-		apartmentMap.put(6, apa6);
-		apartmentMap.put(7, apa7);
+		public HashMap<String, Apartment> getApartments() {
+		//Map<Integer, Apartment> apartmentMap = new HashMap();
+		apartmentMap.put(apa1.getAddress().getCity(), apa1);
+		apartmentMap.put(apa2.getAddress().getCity(), apa2);
+		apartmentMap.put(apa3.getAddress().getCity(), apa3);
+		apartmentMap.put(apa4.getAddress().getCity(), apa4);
+		apartmentMap.put(apa5.getAddress().getCity(), apa5);
+		apartmentMap.put(apa6.getAddress().getCity(), apa6);
+		apartmentMap.put(apa7.getAddress().getCity(), apa7);
 		return apartmentMap;
 	}
 	
-//		public Map getAddresses() {
+//		public List<String> getCityApartments(String city){
+//			List<String> cityList = new ArrayList<String>();
+//			Iterator<String> iterator = apartmentMap.keySet().iterator();
+//			while(iterator.hasNext()){
+//				System.out.println(iterator);
+//			}
+//			//if (city = iterator. = hashMap.get(iterator.next());
+//			
+//			return cityList;
+//		}
+		
+		public void addApartment(Apartment apartment) {
+			apartmentMap.put(apartment.getAddress().getCity(), apartment);
+		}
+		
+		public void deleteApartment(Address address) {
+			Iterator<String> iterator = apartmentMap.keySet().iterator();
+			while(iterator.hasNext()){
+			Apartment apartment = apartmentMap.get(iterator.next());
+			if (apartment.getAddress().equals(address)) {
+				apartmentMap.remove(apartment); //not working
+				break;
+				}
+			}
+		}
+		
+//		public Map getCityApartments() {
 //		Map<Apartment, Address> apartmentMap = new HashMap();
 //		apartmentMap.put(apa1, add1);
 //		apartmentMap.put(apa2, add2);
@@ -81,4 +104,5 @@ public class ApartmentService {
 //		return newApartment;
 //}
 
-}
+		}
+		
