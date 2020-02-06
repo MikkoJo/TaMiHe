@@ -1,9 +1,13 @@
 package fi.amiedu.realestateproject.controller;
 
+import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,61 +22,44 @@ import fi.amiedu.realestateproject.service.ApartmentService;
 
 @RestController
 public class ApartmentController {
+	 private static final Logger logger = LoggerFactory.getLogger(ApartmentController.class);
 
-	@Autowired // Using services
+	@Autowired // Using services and //http://localhost:8080/apartments
 	private ApartmentService apartmentService;
 
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartments", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public Map<String, Apartment> getApartments() {
-		apartmentService.getApartments();
-		return apartmentService.apartmentMap;
+	public List< Apartment> getApartments() {
+		List<Apartment> listApartment = apartmentService.getApartments();
+		return listApartment;
 	}
 	
-//	@RequestMapping(method = RequestMethod.GET, // HTTP GET
-//			value = "/apartments/{city}", 
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	public Map<String, Apartment> getCityApartments() {
-//		apartmentService.getCityApartments();
-//		return apartmentService.apartmentMap;
-//	}
+	@RequestMapping(method = RequestMethod.GET, // HTTP GET
+			value = "/apartments/{city}", 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public List< Apartment> getCityApartments(@PathVariable String city) {
+		return apartmentService.getCityApartments(city);
+		
+	}
 	
-	//Not working
-	@RequestMapping(method = RequestMethod.POST, value = "/apartments")
-	public void addApartment(Apartment apartment) {
+	//http://localhost:8080/apartments
+	@RequestMapping(
+			method = RequestMethod.POST,
+			value = "/apartments"
+			)
+	public void addApartment(@RequestBody Apartment apartment) {
 		apartmentService.addApartment(apartment);
+//		String size = ""+ apartmentService.apartmentMap.size();
+//		logger.info(size);     //logger.info("test");
 	}
+
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "/apartments")
-	public void deleteApartment(Address address) {
-		apartmentService.deleteApartment(address);
+	@RequestMapping(method = RequestMethod.DELETE, // HTTP GET
+			value = "/apartments", // consumes = MediaType.APPLICATION_JSON_VALUE,      
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public void deleteApartment(@RequestBody Apartment apartment) {                      
+		apartmentService.deleteApartment(apartment.getAddress());
 	}
-	
-
-//	@RequestMapping(method = RequestMethod.GET, // HTTP GET
-//			value = "/apartments", 
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	public Map<String, Apartment> getCityApartments() {
-//		apartmentService.getApartments();
-//		return apartmentService.apartmentMap;
-//	}
-	
-	// public Address(/*Property property,*/ String streetAddress/*, String houseNumber, String doorNumber*/,
-	// String city, String zipCode, String country, Point coordinates)
-
-//	@RequestMapping(method = RequestMethod.GET, // HTTP GET
-//			value = "/apartments", // consumes = MediaType.APPLICATION_JSON_VALUE,
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	public Map<Apartment,Address> getAddresses() {
-//		return apartmentService.getApartments();
-//	}
-	
-//	@RequestMapping(method = RequestMethod.GET, // HTTP GET
-//			value = "/apartments", // consumes = MediaType.APPLICATION_JSON_VALUE,
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	public Map<Apartment,Address> getAddresses() {
-//		return apartmentService.getAddresses();
-//	}
 
 }
