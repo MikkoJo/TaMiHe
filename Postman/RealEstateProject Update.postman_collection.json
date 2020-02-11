@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "5b0f3544-1a9c-4dc0-86d7-3e9d23ae1fd3",
+		"name": "RealEstateProject Update",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PUT apartment DataVariables used",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d2427db-14b1-4a52-88ff-07e0b92183fc",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {{address}},\n\t\t\"pictures\": {{pictures}},\n\t\t\"floorPlans\": {{floorPlans}},\n\t\t\"price\": {{price}},\n\t\t\"area\": {{area}},\n\t\t\"desc\": {{desc}},\n\t\t\"floor\": {{floor}},\n\t\t\"totalFloors\": {{totalFloors}},\n\t\t\"elevator\": {{elevator}},\n\t\t\"balcony\": {{balcony}}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Göteborg vägen 12G => Etelä-Ruotsissa ja 650000€",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Göteborg vägen 12G\",\n\t\t\t\"city\": \"Göteborg\",\n\t\t\t\"zipCode\": \"2220\",\n\t\t\t\"country\": \"Ruotsi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 420,\n\t\t\t\t\"y\": 10,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 650000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo Etelä-Ruotsissa\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Kielokuja 7 => luonnon vieressä ja 9000 m^2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Kielokuja 7\",\n\t\t\t\"city\": \"Espoo\",\n\t\t\t\"zipCode\": \"01810\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 44,\n\t\t\t\t\"y\": 68,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 200000.0,\n\t\t\"area\": 9000.0,\n\t\t\"desc\": \"Rivitalo luonnon vieressä\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Vaisalantie 3B => Helsingin rajalla",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 65000.0,\n\t\t\"area\": 800.0,\n\t\t\"desc\": \"Omakotitalo Helsingin rajalla\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Peräjänkuja => maalaismiljöössä",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo maalaismiljöössä\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Peräjäkuja2 => tulevaisuuden mahdollisuus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60a7a0b-da37-47b7-a075-fbc6ae2d0fea",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja2\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo tulevaisuuden mahdollisuus\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Reunatie 81 => urheilukentän vieressä",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d2427db-14b1-4a52-88ff-07e0b92183fc",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Reunatie 81\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01790\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 22,\n\t\t\t\t\"y\": 36,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 250000.0,\n\t\t\"area\": 2100.0,\n\t\t\"desc\": \"Omakotitalo urheilukentän vieressä\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 5,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Nurenkuru => aurinkoisessa Etelä-Afrikassa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d2427db-14b1-4a52-88ff-07e0b92183fc",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 10000.0,\n\t\t\"area\": 17000.0,\n\t\t\"desc\": \"Omakotitalo aurinkoisessa Etelä-Afrikassa\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Mäkitie 6 A12 => puutarhatontilla ja 2 kerrosta (?1.5)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mäkitie 6 A12\",\n\t\t\t\"city\": \"Nurmijärvi\",\n\t\t\t\"zipCode\": \"01870\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 4,\n\t\t\t\t\"y\": 6,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 310000.0,\n\t\t\"area\": 17000.0,\n\t\t\"desc\": \"Omakotitalo puutarhatontilla\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Mannerheimintie 11B => Helsingin ytimessä ja kerros 6/7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dc0c26-7334-4732-b5e7-32bbb5d86076",
+						"exec": [
+							"pm.test(\"Vereify response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Verify status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"01220\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 20,\n\t\t\t\t\"y\": 30,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo Helsingin ytimessä\",\n\t\t\"floor\": 6,\n\t\t\"totalFloors\": 7,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Hiomotie 8 B5 => koulutukseen ilman parveketta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d2427db-14b1-4a52-88ff-07e0b92183fc",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Hiomotie 8 B5\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"00210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": null\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 2000000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Kerrostalo koulutukseen\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 5,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fb27d5bd-f4ae-4f1c-b02a-40476f134722",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e6a7ef62-a0b8-438e-bd3c-11568772fcf2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d3762994-8a42-4027-a065-619f9a5154bd",
+			"key": "address",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "48758edf-73a7-42c0-a415-8708de24b83e",
+			"key": "pictures",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "932faa4d-39ce-4c75-a144-849826c4471a",
+			"key": "floorPlans",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3bc72dd1-59a2-45e6-9a7a-dd83992687e5",
+			"key": "price",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "96d1084f-e62a-4492-9cfb-a818f6145990",
+			"key": "area",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "9865d99d-9648-4da1-88f0-134345534a88",
+			"key": "desc",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "c6d746b3-1670-4b72-9223-ad064273fb1c",
+			"key": "floor",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "9e48cb62-7d64-4e51-9860-47e4fbc32be5",
+			"key": "totalFloors",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "d578e59a-2c3b-4fca-b01c-ff8df0afc7d6",
+			"key": "elevator",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "270872cc-7977-4908-ac01-96ed7829d4cc",
+			"key": "balcony",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

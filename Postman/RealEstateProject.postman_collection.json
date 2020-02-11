@@ -1,0 +1,944 @@
+{
+	"info": {
+		"_postman_id": "9944ee71-93cb-4458-83ad-1ed1990f78ce",
+		"name": "RealEstateProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All apartments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment All startUp",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Reunatie 81\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01790\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 22,\n\t\t\t\t\"y\": 36,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Kielokuja 7\",\n\t\t\t\"city\": \"Espoo\",\n\t\t\t\"zipCode\": \"01810\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 44,\n\t\t\t\t\"y\": 68,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mäkitie 6 A12\",\n\t\t\t\"city\": \"Nurmijärvi\",\n\t\t\t\"zipCode\": \"01870\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 4,\n\t\t\t\t\"y\": 6,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t}\n]\n\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment All startUp Script",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Reunatie 81\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01790\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 22,\n\t\t\t\t\"y\": 36,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Kielokuja 7\",\n\t\t\t\"city\": \"Espoo\",\n\t\t\t\"zipCode\": \"01810\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 44,\n\t\t\t\t\"y\": 68,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mäkitie 6 A12\",\n\t\t\t\"city\": \"Nurmijärvi\",\n\t\t\t\"zipCode\": \"01870\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 4,\n\t\t\t\t\"y\": 6,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t}\n]\n\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment All startUp AllInfo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n},\n{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Reunatie 81\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01790\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 22,\n\t\t\t\t\"y\": 36,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n},\n {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n},\n {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Kielokuja 7\",\n\t\t\t\"city\": \"Espoo\",\n\t\t\t\"zipCode\": \"01810\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 44,\n\t\t\t\t\"y\": 68,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n},\n {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n},\n {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mäkitie 6 A12\",\n\t\t\t\"city\": \"Nurmijärvi\",\n\t\t\t\"zipCode\": \"01870\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 4,\n\t\t\t\t\"y\": 6,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}\n]\n\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Peräjänkuja",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Reunatie 81",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Reunatie 81 Try",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Vaisalantie 3B",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\"Vantaa\": {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Kielokuja 7",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Nurenkuru",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Mäkitie 6 A12",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Hiomotie 8 B5",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\"Helsinki\": {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Hiomotie 8 B5\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"00210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": null\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment StreetAdress (Peräjänkuja)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment StreetAdress (Mannerheimintie 11B)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": null,\n\t\t\t\"zipCode\": null,\n\t\t\t\"country\": null,\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": null,\n\t\t\t\t\"y\": null,\n\t\t\t\t\"z\": null\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Peräjänkuja2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja2\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Mannerheimintie 11B (AllInfo)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"01220\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 20,\n\t\t\t\t\"y\": 30,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Mannerheimintie 11B (Just Address)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"01220\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 20,\n\t\t\t\t\"y\": 30,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment Vaisalantie 3B",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 65000.0,\n\t\t\"area\": 800.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE apartment StreetAdress (Göteborg)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Göteborg vägen 12G\",\n\t\t\t\"city\": \"Göteborg\",\n\t\t\t\"zipCode\": \"2220\",\n\t\t\t\"country\": \"Ruotsi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 420,\n\t\t\t\t\"y\": 10,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment All in startUp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dc0c26-7334-4732-b5e7-32bbb5d86076",
+						"exec": [
+							"pm.test(\"Vereify response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Verify status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 10000.0,\n\t\t\"area\": 17000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 65000.0,\n\t\t\"area\": 800.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Kielokuja 7\",\n\t\t\t\"city\": \"Espoo\",\n\t\t\t\"zipCode\": \"01810\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 44,\n\t\t\t\t\"y\": 68,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 200000.0,\n\t\t\"area\": 7000.0,\n\t\t\"desc\": \"Rivitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Hiomotie 8 B5\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"00210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": null\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 2000000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 5,\n\t\t\"elevator\": true,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Reunatie 81\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01790\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 22,\n\t\t\t\t\"y\": 36,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 250000.0,\n\t\t\"area\": 2100.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 5,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mäkitie 6 A12\",\n\t\t\t\"city\": \"Nurmijärvi\",\n\t\t\t\"zipCode\": \"01870\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 4,\n\t\t\t\t\"y\": 6,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 310000.0,\n\t\t\"area\": 17000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}\n]\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment 2 in startUp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dc0c26-7334-4732-b5e7-32bbb5d86076",
+						"exec": [
+							"pm.test(\"Vereify response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Verify status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Nurenkuru\",\n\t\t\t\"city\": \"Rundu\",\n\t\t\t\"zipCode\": \"9871\",\n\t\t\t\"country\": \"Namibia\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 244,\n\t\t\t\t\"y\": 368,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 10000.0,\n\t\t\"area\": 17000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t},\n\t{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Vaisalantie 3B\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01210\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 34,\n\t\t\t\t\"y\": 46,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 65000.0,\n\t\t\"area\": 800.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 1,\n\t\t\"totalFloors\": 1,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}\n]\n\t"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Mannerheimintie 11B",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dc0c26-7334-4732-b5e7-32bbb5d86076",
+						"exec": [
+							"pm.test(\"Vereify response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Verify status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"01220\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 20,\n\t\t\t\t\"y\": 30,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Mannerheimintie 11B Try",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dc0c26-7334-4732-b5e7-32bbb5d86076",
+						"exec": [
+							"pm.test(\"Vereify response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Verify status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Mannerheimintie 11B\",\n\t\t\t\"city\": \"Helsinki\",\n\t\t\t\"zipCode\": \"01220\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 20,\n\t\t\t\t\"y\": 30,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Göteborg vägen 12G",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Göteborg vägen 12G\",\n\t\t\t\"city\": \"Göteborg\",\n\t\t\t\"zipCode\": \"2220\",\n\t\t\t\"country\": \"Ruotsi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 420,\n\t\t\t\t\"y\": 10,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalo\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Peräjänkuja",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d2427db-14b1-4a52-88ff-07e0b92183fc",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": null,\n\t\t\"floorPlans\": null,\n\t\t\"price\": null,\n\t\t\"area\": null,\n\t\t\"desc\": null,\n\t\t\"floor\": null,\n\t\t\"totalFloors\": null,\n\t\t\"elevator\": null,\n\t\t\"balcony\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apartment Peräjäkuja2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60a7a0b-da37-47b7-a075-fbc6ae2d0fea",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja2\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 160000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Peräjäkuja => 260 ja hyvällä paikalla",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a60a7a0b-da37-47b7-a075-fbc6ae2d0fea",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Peräjänkuja\",\n\t\t\t\"city\": \"Vantaa\",\n\t\t\t\"zipCode\": \"01760\",\n\t\t\t\"country\": \"Suomi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 1,\n\t\t\t\t\"y\": 21,\n\t\t\t\t\"z\": 0\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 260000.0,\n\t\t\"area\": 170000.0,\n\t\t\"desc\": \"Omakotitalo hyvällä paikalla\",\n\t\t\"floor\": 2,\n\t\t\"totalFloors\": 2,\n\t\t\"elevator\": false,\n\t\t\"balcony\": true\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT apartment Göteborg vägen 12G => Kerrostalohuniesto Etelä-Ruotsista",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": null,\n\t\t\"address\": {\n\t\t\t\"id\": null,\n\t\t\t\"streetAddress\": \"Göteborg vägen 12G\",\n\t\t\t\"city\": \"Göteborg\",\n\t\t\t\"zipCode\": \"2220\",\n\t\t\t\"country\": \"Ruotsi\",\n\t\t\t\"coordinates\": {\n\t\t\t\t\"id\": null,\n\t\t\t\t\"x\": 420,\n\t\t\t\t\"y\": 10,\n\t\t\t\t\"z\": 5\n\t\t\t}\n\t\t},\n\t\t\"pictures\": [],\n\t\t\"floorPlans\": [],\n\t\t\"price\": 450000.0,\n\t\t\"area\": 80.0,\n\t\t\"desc\": \"Kerrostalohuoneisto Etelä-Ruotsissa\",\n\t\t\"floor\": 5,\n\t\t\"totalFloors\": 6,\n\t\t\"elevator\": true,\n\t\t\"balcony\": false\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fb27d5bd-f4ae-4f1c-b02a-40476f134722",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e6a7ef62-a0b8-438e-bd3c-11568772fcf2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
