@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.springframework.transaction.annotation.Transactional;
-
 @Entity
 public abstract class Property {
 
@@ -32,12 +30,12 @@ public abstract class Property {
 	private Address address;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	@JoinColumn(name="property_id")
+	@JoinColumn(name="property_id", referencedColumnName = "id")
 	private List<Picture> pictures;
 	
 //	@OneToMany(mappedBy="property")
 	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	@JoinColumn(name="property_id")
+	@JoinColumn(name="property_id", referencedColumnName = "id")
 	private List<Picture> floorPlans;
 	private double price;
 	private double area;
@@ -85,7 +83,15 @@ public abstract class Property {
 	}
 
 	public void setPictures(List<Picture> pictures) {
-		this.pictures = pictures;
+		if(this.pictures == null)
+			this.pictures = pictures;
+		else {
+			pictures.forEach(pictures::add);
+		}
+	}
+	
+	public void addPicture(Picture picture) {
+		this.pictures.add(picture);
 	}
 
 	public List<Picture> getFloorPlans() {
@@ -93,7 +99,15 @@ public abstract class Property {
 	}
 
 	public void setFloorPlans(List<Picture> floorPlans) {
-		this.floorPlans = floorPlans;
+		if(this.floorPlans == null)
+			this.floorPlans = floorPlans;
+		else {
+			floorPlans.forEach(floorPlans::add);
+		}
+	}
+	
+	public void addFloorPlan(Picture picture) {
+		this.pictures.add(picture);
 	}
 
 	public double getPrice() {

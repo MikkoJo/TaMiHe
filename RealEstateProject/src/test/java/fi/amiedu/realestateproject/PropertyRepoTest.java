@@ -1,17 +1,20 @@
 package fi.amiedu.realestateproject;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.Before;
+//import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import fi.amiedu.realestateproject.domain.Address;
@@ -20,7 +23,8 @@ import fi.amiedu.realestateproject.domain.Property;
 import fi.amiedu.realestateproject.repository.PropertyRepository;
 import fi.amiedu.realestateproject.util.Point;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest/*(classes = SampleApplication.class)*/
 class PropertyRepoTest {
 

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import fi.amiedu.realestateproject.domain.Property;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,34 @@ public class ApartmentController {
 
 	@Autowired // Using services and //http://localhost:8080/apartments
 	private ApartmentService apartmentService;
+
+	@RequestMapping(method = RequestMethod.GET, // HTTP GET
+			value = "/init") 
+	public void initApartments() {
+		try {
+			apartmentService.init();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, // HTTP GET
+			value = "/apartment", 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public List< Property> getAllPropertyes() {
+		List<Property> properties = apartmentService.getAllProperties();
+		return properties;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, // HTTP GET
+			value = "/apartment/{id}", 
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public Property getProperty(@PathVariable Integer id) {
+		System.out.println(id);
+		Property property= apartmentService.getProperty(id);
+		return property;
+	}
 
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartments", 
