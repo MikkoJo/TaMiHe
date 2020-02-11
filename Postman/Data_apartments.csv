@@ -1,0 +1,8 @@
+id,address,pictures,floorPlans,price,area,desc,floor,totalFloors,elevator,balcony
+,null|Kielokuja 7|Espoo|01810|Suomi|null|44|68|0,null,null,200000,7000,Rivitalo,1,2,false,true
+,null|Hiomotie 8 B5|Helsinki|00210|Suomi|null,null,null,2000000,170000,Kerrostalo,5,5,true,true
+,null|Mäkitie 6 A12|Nurmijärvi|01870|Suomi|null|4|6|0,null,null,310000,17000,Omakotitalo,1,1,false,true
+,null|Nurenkuru|Rundu|9871|Namibia|null|244|368|0,null,null,10000,17000,Omakotitalo,1,1,false,true
+,null|Vaisalantie 3B|Vantaa|01210|Suomi|null|34|46|0,null,null,65000,800,Omakotitalo,1,1,false,true
+,null|Reunatie 81|Vantaa|01790|Suomi|null|22|36|0,null,null,250000,2100,Omakotitalo,1,5,false,true
+,null|Peräjänkuja|Vantaa|01760|Suomi|null|1|21|0,null,null,160000,170000,Omakotitalo,2,2,false,true
