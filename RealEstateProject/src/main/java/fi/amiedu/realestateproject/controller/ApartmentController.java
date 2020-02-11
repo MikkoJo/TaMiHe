@@ -45,7 +45,7 @@ public class ApartmentController {
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartment", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public List< Property> getAllPropertyes() {
+	public List< Property> getAllProperties() {
 		List<Property> properties = apartmentService.getAllProperties();
 		return properties;
 	}
