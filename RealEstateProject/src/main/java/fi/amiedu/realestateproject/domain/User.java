@@ -1,16 +1,15 @@
 package fi.amiedu.realestateproject.domain;
 
-import java.util.HashMap;
-
 public class User {
-	String type;
-	String name;
-	String password;
-
-	public User(String type, String name, String password){
-	this.type = type;
+	// Possible type of users are seeker, service andadmin
+	private String type;
+	private String name;
+	private String password;
+	
+	public User(String name, String password, String type){
 	this.name = name;
 	this.password = password;
+	this.type = type;
 	}
 
 	public String getType() {
@@ -25,9 +24,9 @@ public class User {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
 	public String getPassword() {
 		return password;
@@ -36,8 +35,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public void display() {
-		System.out.println("User name: " + getName() + " and role of user: " + getType());
+
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(super.toString());
+		builder.append("User [name=");
+		builder.append(name);
+		builder.append(", type=");
+		builder.append(type);
+		builder.append("]");
+		return builder.toString();
 	}
 }

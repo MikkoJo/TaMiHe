@@ -2,98 +2,108 @@ package fi.amiedu.realestateproject.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
 import fi.amiedu.realestateproject.domain.User;
 
 @Component
 public class UserService {
+	// Logger create to help debugging problems
+	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-	private Map<String, String> logUsers = getUsers();
-	
+	private ArrayList<User> users = new ArrayList<User>(
+			Arrays.asList(new User("mikko.johansson@gmail.com", "Mikko#123", "admin")));
+	boolean startUp = true;
+ 
+	// This gives the initial users at the startup situation.
+	public void getUsers() {
+		if (startUp == true) {
+			User user1 = new User("Tapsa", "Tap10123#", "service");
+			User user2 = new User("Mikko", "M1kk0456¤", "admin");
+			User user3 = new User("Heidi", "He1d1789%", "service");
+			User user4 = new User("ServiceUser1", "sdfjkdfjl335%", "seeker");
+			User user5 = new User("Matti Meikäläinen", "Masa123%", "seeker");
+			users.add(user1);
+			users.add(user2);
+			users.add(user3);
+			users.add(user4);
+			users.add(user5);
+			startUp = false;
+		}
+	}
 
-//		List<User> users = new ArrayList<User>(Arrays.asList(
-//		 new User("service", "Tapsa", "Tap10123#"),
-//		 new User("admin", "Mikko", "M1kk0456¤"),
-//		 new User("service", "Heidi", "He1d1789%"),
-//		new User("seeker", "ServiceUser1", "sdfjkdfjl335%"),
-//		new User("seeker", "Matti Meikäläinen", "Masa123%")));
-//
-//		public Map<String, String> getUsers() {
-//			HashMap<String, String> userDetails = new HashMap<String, String>();
-////		for (User user: users) {
-////			userDetails.put(user.getName(),user.getType());
-////		}
-//		userDetails.put("Oipat","service");
-//				return userDetails;
-//		}
-
-	public Map<String, String> getUsers() {
-		HashMap<String, String> users = new HashMap<String, String>();
-		User user1 = new User("service", "Tapsa", "Tap10123#");
-		User user2 = new User("admin", "Mikko", "M1kk0456¤");
-		User user3 = new User("service", "Heidi", "He1d1789%");
-		User user4 = new User("seeker", "ServiceUser1", "sdfjkdfjl335%");
-		User user5 = new User("seeker", "Matti Meikäläinen", "Masa123%");
-		users.put(user1.getName(),user1.getType());
-		users.put(user2.getName(),user2.getType());
-		users.put(user3.getName(),user3.getType());
-		users.put(user4.getName(),user4.getType());
-		users.put(user5.getName(),user5.getType());
+	// This actually calls initialization and the list of users
+	public List<User> getAllUsers() {
+		if (startUp == true) {
+			getUsers();
+			startUp = false;
+		}
+		logger.info("getAllUsers: " + users);
 		return users;
 	}
 	
-	public ArrayList<String> getTypeUsers(String type) {
-		Map<String, String> users = getUsers();
-		Set<Map.Entry<String, String>> entryUsers = users.entrySet();
-		ArrayList<String> typeUsers = new ArrayList<String>();
-
-		for (Map.Entry<String, String> user : entryUsers) {
-			if (user.getValue().equals("service")&&(type=="service")) {
-				typeUsers.add(user.getKey());
-			} else if (user.getValue().equals("admin")&&(type=="admin")) {
-				typeUsers.add(user.getKey());
-			} else if (user.getValue().equals("seeker")&&(type=="seeker")) {
-				typeUsers.add(user.getKey());
-			} else if(!(type=="service")&&!(type=="admin")&&!(type=="seeker")) {
-				typeUsers.add("This is not in use!");
-				break;}
+	// Different types of users are checked. Possible values are seeker, service and admin
+	public ArrayList<User> getTypeUsers(String type) {
+		if (startUp == true) {
+			getUsers();
+			startUp = false;
+		}
+		logger.info("getTypeUsers: " + users);
+		ArrayList<User> typeUsers = new ArrayList<User>(Arrays.asList());
+		logger.info("getTypeUsers:  list at first:" + typeUsers);
+		for (User user : users) {
+			if ((user.getType().equals("service")) && (type.equals("service"))) {
+				typeUsers.add(user);
+			} else if ((user.getType().equals("admin")) && (type.equals("admin"))) {
+				typeUsers.add(user);
+			} else if ((user.getType().equals("seeker")) && (type.equals("seeker"))) {
+				typeUsers.add(user);
+			} else if (!(type.equals("service")) && !(type.equals("admin")) && !(type.equals("seeker"))) {
+				typeUsers.add(new User("This is not in use!", " Sorry about that.", "Be pation my friend."));
+				break;
 			}
-	return typeUsers;
+		}
+		logger.info("getTypeUsers:  list in the end:" + typeUsers);
+		return typeUsers;
 	}
-	
-//	public Map<String,String> addUser(User user){
-//		logUsers.put(user.getName(),user.getType());
-//		return logUsers;
-//	}
-	
-	//public setPassworh(type, name, password)
 
+	// New user is added in the arraylist of users
+	public User addUser(User user) {
+		if (startUp == true) {
+			getUsers();
+			startUp = false;
+		}
+		boolean found = false;
+		for (User user1 : users) {
+			if (user1.getName().equals(user.getName())) {
+				found = true;
+				logger.info("addUser: Can not be same username. Create unique one. And create your account.");
+				return new User("Can not be same username", " Create unique one.", "And create your account.");
+			}
+		}
+		if (found == false) {
+			users.add(user);
+		}
+		return user;
+	}
 
-
-//	public Map<String,Map<String,String>> setUser(String user, String password, String type) {
-//		logUsers.put(user, password);
-//		for( Map users : logUsers) {
-//			infoUsers = keySet
-//		}
-//		return }
-
-//		public Map<String> setUser(String user, String password, String type) {
-//			if (!(type == "service user") || !(type == "administrator"))
-//				type = "watcher";
-//			logUsers.put(user, password);
-//			
-//			for( Map users : logUsers) {
-//			logUsers.keySet();
-//			}
-
-//	public void print() {
-//		System.out.println(getUsers());
-//	}
-
+	// User role or type is changed if user exists
+	public String updateUser(User user) {
+		if (startUp == true) {
+			getUsers();
+			startUp = false;
+		}
+		boolean found = false;
+		for (User user1 : users) {
+			if (user1.getName().equals(user.getName())) {
+				found = true;
+				user1.setType(user.getType());
+				logger.info("addUser: Can not be same username. Create unique one. And create your account.");
+				return user + " type is updated!";
+			}
+		}
+		return user.getName() + " does not exist.";
+	}
 }
