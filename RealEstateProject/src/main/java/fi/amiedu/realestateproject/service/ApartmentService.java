@@ -116,7 +116,7 @@ public class ApartmentService {
 	}
 
 	public List<Property> searchByAddress(String address) {
-		return repo.findByAddressStreetAddressContaining(address);
+		return repo.findByAddressStreetAddressContainingIgnoreCase(address);
 	}
 	
 	/*
