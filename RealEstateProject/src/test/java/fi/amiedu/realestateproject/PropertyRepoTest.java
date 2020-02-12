@@ -131,11 +131,11 @@ class PropertyRepoTest {
 		repo.save(apart);
 		Iterable<Property> all = repo.findAll();
 		assertEquals(3, repo.count());
-		List<Property> country = repo.findByAddressCountry("Suomi");
+		List<Property> country = repo.findByAddressCountryIgnoreCase("Suomi");
 		assertEquals(2, country.size());
-		List<Property> street = repo.findByAddressStreetAddressContaining("kuja");
+		List<Property> street = repo.findByAddressStreetAddressContainingIgnoreCase("kuja");
 		assertEquals(1,street.size());
-		List<Property> city = repo.findByAddressCity("Helsinki");
+		List<Property> city = repo.findByAddressCityIgnoreCase("Helsinki");
 		assertEquals(2,city.size());
 		List<Property> price = repo.findByPriceLessThanEqual(130000.0);
 		assertEquals(2,price.size());

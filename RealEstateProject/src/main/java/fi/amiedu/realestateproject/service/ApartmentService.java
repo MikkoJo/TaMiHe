@@ -77,8 +77,8 @@ public class ApartmentService {
 			List<Picture> pics2 = Arrays.asList(new Picture("eka", image));
 			apa2.addFloorPlan(pics2.get(0));
 //			apa2.setPictures(pics2);
-			repo.save(apa1);
-			repo.save(apa2);
+//			repo.save(apa1);
+//			repo.save(apa2);
 			startUp = false;
 		}
 	}
@@ -92,7 +92,6 @@ public class ApartmentService {
 
 	public Property getProperty(Integer id) {
 		Property prop = repo.findById(id).get();
-		System.out.println("hmmm" + prop);
 		return prop;
 	}
 
