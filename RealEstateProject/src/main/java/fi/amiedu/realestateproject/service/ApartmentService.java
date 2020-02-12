@@ -114,6 +114,10 @@ public class ApartmentService {
 			repo.deleteById(id);
 		}
 	}
+
+	public List<Property> searchByAddress(String address) {
+		return repo.findByAddressStreetAddressContaining(address);
+	}
 	
 	/*
 	 * Old Code

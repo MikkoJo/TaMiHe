@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fi.amiedu.realestateproject.domain.Address;
@@ -45,8 +46,14 @@ public class ApartmentController {
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartment", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public List< Property> getAllProperties() {
-		List<Property> properties = apartmentService.getAllProperties();
+	public List< Property> getAllProperties(@RequestParam(required = false) String address) {
+		List<Property> properties;
+		if(address == null) {
+			properties = apartmentService.getAllProperties();
+		}
+		else {
+			properties = apartmentService.searchByAddress(address);
+		}
 		return properties;
 	}
 	
@@ -84,6 +91,7 @@ public class ApartmentController {
 	public void removeProperty(@PathVariable Integer id) {
 		apartmentService.removeProperty(id);
 	}
+	
 /*
  * Old code
  * 
