@@ -92,7 +92,7 @@ public abstract class Property {
 		if(this.pictures == null)
 			this.pictures = pictures;
 		else {
-			pictures.forEach(pictures::add);
+			pictures.forEach(this.pictures::add);
 		}
 	}
 	
@@ -108,12 +108,12 @@ public abstract class Property {
 		if(this.floorPlans == null)
 			this.floorPlans = floorPlans;
 		else {
-			floorPlans.forEach(floorPlans::add);
+			floorPlans.forEach(this.floorPlans::add);
 		}
 	}
 	
-	public void addFloorPlan(Picture picture) {
-		this.pictures.add(picture);
+	public void addFloorPlan(Picture floorPlan) {
+		this.floorPlans.add(floorPlan);
 	}
 
 	public double getPrice() {

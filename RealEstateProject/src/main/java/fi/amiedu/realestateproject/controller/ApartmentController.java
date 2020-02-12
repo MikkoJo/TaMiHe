@@ -59,7 +59,6 @@ public class ApartmentController {
 		return property;
 	}
 	
-	//http://localhost:8080/apartment
 	@RequestMapping(
 			method = RequestMethod.POST,
 			value = "/apartment",
@@ -86,6 +85,8 @@ public class ApartmentController {
 		apartmentService.removeProperty(id);
 	}
 /*
+ * Old code
+ * 
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartments", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -109,7 +110,7 @@ public class ApartmentController {
 		apartmentService.getApartments();
 		return apartmentService.getCityApartments( city);
 	}
-	*/
+	
 	@RequestMapping(
 			method = RequestMethod.PUT,
 			value = "/apartments"
@@ -176,5 +177,5 @@ public class ApartmentController {
 //			deleteApartment(apartmentValue.getAddress());
 //		}
 //	}
-
+*/
 }
