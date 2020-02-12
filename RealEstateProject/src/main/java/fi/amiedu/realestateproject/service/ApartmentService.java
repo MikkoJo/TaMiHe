@@ -77,7 +77,7 @@ public class ApartmentService {
 			List<Picture> pics2 = Arrays.asList(new Picture("eka", image));
 			apa2.addFloorPlan(pics2.get(0));
 //			apa2.setPictures(pics2);
-//			repo.save(apa1);
+			repo.save(apa1);
 //			repo.save(apa2);
 			startUp = false;
 		}

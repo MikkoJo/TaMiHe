@@ -17,6 +17,7 @@ public class Picture {
 	private Integer id; 
 
 	private String desc;
+	private String url;
 	@Lob
     @Column(columnDefinition="BLOB")
 	private byte[] file;
@@ -30,9 +31,20 @@ public class Picture {
 		super();
 		this.desc = desc;
 		this.file = file;
+//		this.url = url;
 //		this.property = property;
 	}
 	
+	public String getUrl() {
+		// hardcoded 
+		//TODO: change later
+		return "/picture/" + id;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	public Picture() {
 	}
 
