@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -128,23 +129,23 @@ public class ApartmentService {
 		return countryList;
 	}
 
-	public void addApartment(Apartment apartment) {
-		// if (!apartmentMap.containsValue(apartment)) { // not working, but why?
-		boolean found = false;
-		for (Apartment apa : apartments) {
-			if ((apa.getAddress().toString()).equals(apartment.getAddress().toString())) {
-				found = true;
-				break;
-			}
-		}
-		if (found == false) {
-			apartments.add(apartment);
-			apartmentMap.put(apartment.getAddress(), apartment);
-		}
-		String msg = apartmentMap.toString();
-		logger.info("addApa apartmentMap: " + msg);
-		// return apartments; List<Apartment>
-	}
+//	public void addApartment(Apartment apartment) {
+//		// if (!apartmentMap.containsValue(apartment)) { // not working, but why?
+//		boolean found = false;
+//		for (Apartment apa : apartments) {
+//			if ((apa.getAddress().toString()).equals(apartment.getAddress().toString())) {
+//				found = true;
+//				break;
+//			}
+//		}
+//		if (found == false) {
+//			apartments.add(apartment);
+//			apartmentMap.put(apartment.getAddress(), apartment);
+//		}
+//		String msg = apartmentMap.toString();
+//		logger.info("addApa apartmentMap: " + msg);
+//		// return apartments; List<Apartment>
+//	}
 
 	public void addApartments(HashMap<Address, Apartment> apartmentHashMap) {
 		// Apartment apartment = null;
@@ -269,5 +270,23 @@ public class ApartmentService {
 		System.out.println("hmmm" + prop);
 		return prop;
 	}
+	
+	public void addApartment(Apartment apartment) {
+		repo.save(apartment);
+	}
+	
+	public void updateApartment(Integer id, Apartment apartment) {
+		Optional<Property> found = repo.findById(id);
+		if (found.isPresent()) {
+			repo.save(apartment);
+		}
+		
+	}
 
+	public void removeProperty(Integer id) {
+		Optional<Property> found = repo.findById(id);
+		if (found.isPresent()) {
+			repo.deleteById(id);
+		}
+	}
 }

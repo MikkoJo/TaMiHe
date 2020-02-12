@@ -26,8 +26,10 @@ public class Address {
 	private String city;
 	private String zipCode;
 	private String country;
-//	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, 
+	CascadeType.MERGE,
+	CascadeType.REMOVE})
+//	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="point_id")
 	private Point coordinates;
 

@@ -24,17 +24,23 @@ public abstract class Property {
 	@JoinColumn(name="lot_id", referencedColumnName = "id")
 	private Lot lot;
 */	
-//	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, 
+			CascadeType.MERGE,
+			CascadeType.REMOVE})
+//	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="address_id", referencedColumnName = "id")
 	private Address address;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, 
+			CascadeType.MERGE,
+			CascadeType.REMOVE})
 	@JoinColumn(name="property_id", referencedColumnName = "id")
 	private List<Picture> pictures;
 	
 //	@OneToMany(mappedBy="property")
-	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, 
+			CascadeType.MERGE,
+			CascadeType.REMOVE})
 	@JoinColumn(name="property_id", referencedColumnName = "id")
 	private List<Picture> floorPlans;
 	private double price;

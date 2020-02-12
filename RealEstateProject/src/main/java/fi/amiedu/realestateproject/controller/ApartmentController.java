@@ -58,7 +58,34 @@ public class ApartmentController {
 		Property property= apartmentService.getProperty(id);
 		return property;
 	}
-
+	
+	//http://localhost:8080/apartment
+	@RequestMapping(
+			method = RequestMethod.POST,
+			value = "/apartment",
+			produces = MediaType.APPLICATION_JSON_VALUE
+			)
+	public void addApartment(@RequestBody Apartment apartment) {
+		apartmentService.addApartment(apartment);
+	}
+	
+	@RequestMapping(
+			method = RequestMethod.PUT,
+			value = "/apartment/{id}",
+			produces = MediaType.APPLICATION_JSON_VALUE
+			)
+	public void updateProperty(@PathVariable Integer id, @RequestBody Apartment apartment) {
+		apartmentService.updateApartment(id, apartment);
+	}
+	
+	@RequestMapping(
+			method = RequestMethod.DELETE,
+			value = "/apartment/{id}"
+			)
+	public void removeProperty(@PathVariable Integer id) {
+		apartmentService.removeProperty(id);
+	}
+/*
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartments", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
@@ -82,7 +109,7 @@ public class ApartmentController {
 		apartmentService.getApartments();
 		return apartmentService.getCityApartments( city);
 	}
-	
+	*/
 	@RequestMapping(
 			method = RequestMethod.PUT,
 			value = "/apartments"
@@ -92,16 +119,16 @@ public class ApartmentController {
 		apartmentService.updateApartment(apartment);
 	}
 	
-	//http://localhost:8080/apartments
-	@RequestMapping(
-			method = RequestMethod.POST,
-			value = "/apartments"
-			)
-	public void addApartment(@RequestBody Apartment apartment) {
-		apartmentService.getApartments();
-		apartmentService.addApartment(apartment);
-	}
-	
+//	//http://localhost:8080/apartments
+//	@RequestMapping(
+//			method = RequestMethod.POST,
+//			value = "/apartments"
+//			)
+//	public void addApartment(@RequestBody Apartment apartment) {
+//		apartmentService.getApartments();
+//		apartmentService.addApartment(apartment);
+//	}
+//	
 //	@RequestMapping(
 //			method = RequestMethod.POST,
 //			value = "/apartments"
@@ -117,14 +144,14 @@ public class ApartmentController {
 //	//	apartmentService.addApartments(apartmentHashMap);
 //	}
 
-	
-	@RequestMapping(method = RequestMethod.DELETE, 
-			value = "/apartments",     
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	public void deleteApartment(@RequestBody Apartment apartment) {
-		apartmentService.getApartments();
-		apartmentService.deleteApartment(apartment.getAddress());
-	}
+//	
+//	@RequestMapping(method = RequestMethod.DELETE, 
+//			value = "/apartments",     
+//			produces = MediaType.APPLICATION_JSON_VALUE)
+//	public void deleteApartment(@RequestBody Apartment apartment) {
+//		apartmentService.getApartments();
+//		apartmentService.deleteApartment(apartment.getAddress());
+//	}
 	
 //	@RequestMapping(method = RequestMethod.DELETE, 
 //			value = "/apartments",     
