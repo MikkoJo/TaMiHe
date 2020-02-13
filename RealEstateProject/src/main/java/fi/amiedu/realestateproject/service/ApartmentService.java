@@ -40,6 +40,7 @@ public class ApartmentService {
 	private ArrayList<Apartment> apartments = new ArrayList<Apartment>();
 	private boolean startUp = true;
 	private InputStream input;
+	private InputStream input3;
 	private Resource resourc;
 	public void init() throws Exception {
 		if (startUp) {
@@ -66,11 +67,14 @@ public class ApartmentService {
 			repo.save(apa6);
 			repo.save(apa7);
 			Resource resource = new ClassPathResource("static/test.jpg");
-
+			Resource resource2 = new ClassPathResource("static/test2.jpg");
 			input = resource.getInputStream();
+			input3 = resource2.getInputStream();
 
 			apa1.addPicture(new Picture("Test", input.readAllBytes()));
 			input.close();
+			apa1.addPicture(new Picture("Test2", input3.readAllBytes()));
+			input3.close();
 			resourc = new ClassPathResource("static/test.jpg");
 			InputStream input2 = resourc.getInputStream();
 			byte[] image = input2.readAllBytes();
