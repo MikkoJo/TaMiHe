@@ -27,6 +27,7 @@ import fi.amiedu.realestateproject.service.ApartmentService;
 //http://localhost:8080/apartments/country/{country}
 
 @RestController
+@CrossOrigin
 public class ApartmentController {
 	 private static final Logger logger = LoggerFactory.getLogger(ApartmentController.class);
 
@@ -47,7 +48,7 @@ public class ApartmentController {
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartment", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	@CrossOrigin
+	//@CrossOrigin
 	public List< Property> getAllProperties(@RequestParam(required = false) String address) {
 		List<Property> properties;
 		if(address == null) {
