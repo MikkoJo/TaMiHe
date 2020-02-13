@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StreamUtils;
 
 import fi.amiedu.realestateproject.controller.ApartmentController;
 import fi.amiedu.realestateproject.domain.Address;
@@ -68,16 +69,19 @@ public class ApartmentService {
 			repo.save(apa7);
 			Resource resource = new ClassPathResource("static/test.jpg");
 			Resource resource2 = new ClassPathResource("static/test2.jpg");
+			
 			input = resource.getInputStream();
 			input3 = resource2.getInputStream();
-
-			apa1.addPicture(new Picture("Test", input.readAllBytes()));
+			
+			apa1.addPicture(new Picture("Test", StreamUtils.copyToByteArray(input)));
+//			apa1.addPicture(new Picture("Test", input.readAllBytes()));
 			input.close();
-			apa1.addPicture(new Picture("Test2", input3.readAllBytes()));
+			apa1.addPicture(new Picture("Test2", StreamUtils.copyToByteArray(input3)));
 			input3.close();
 			resourc = new ClassPathResource("static/test.jpg");
 			InputStream input2 = resourc.getInputStream();
-			byte[] image = input2.readAllBytes();
+			byte[] image = StreamUtils.copyToByteArray(input2);
+			input2.close();
 			List<Picture> pics2 = Arrays.asList(new Picture("eka", image));
 			apa2.addFloorPlan(pics2.get(0));
 //			apa2.setPictures(pics2);
