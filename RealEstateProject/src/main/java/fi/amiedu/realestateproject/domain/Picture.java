@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 @Entity
 public class Picture {
 
@@ -38,7 +40,7 @@ public class Picture {
 	public String getUrl() {
 		// hardcoded 
 		//TODO: change later
-		return "/picture/" + id;
+		return ServletUriComponentsBuilder.fromCurrentContextPath().toUriString() + "/picture/" + id;
 	}
 
 	public void setUrl(String url) {
