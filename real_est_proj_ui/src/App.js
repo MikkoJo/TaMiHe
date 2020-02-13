@@ -29,9 +29,9 @@ class App extends React.Component {
       <ul>
        {this.state.apartments.map(function(apar) {
          return <li key={apar.id}>
-          {apar.address.streetAddress} {apar.address.zipCode} {apar.address.city}
+          <div>{apar.address.streetAddress} {apar.address.zipCode} {apar.address.city}</div>
           {apar.pictures.map(function(pic) {
-            return <img key={pic.id} src={pic.url} alt="" style={{width:'300px'}} />
+            return <span><img key={pic.id} src={pic.url} alt="" style={{width:'300px', margin:'10px'}} /></span>
 
           })}
          </li>
