@@ -140,7 +140,7 @@ public class ApartmentService {
 		
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 		try {
-			prop.addPicture(new Picture(fileName, file.getBytes()));
+			prop.addPicture(new Picture(fileName, file.getBytes(), file.getContentType()));
 			repo.save(prop);
 		}
 
@@ -154,7 +154,7 @@ public class ApartmentService {
 	public boolean addApartmentWithPic(@Valid Apartment apartment, @Valid @NotNull @NotBlank MultipartFile file) {
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 		try {
-			apartment.addPicture(new Picture(fileName, file.getBytes()));
+			apartment.addPicture(new Picture(fileName, file.getBytes(), file.getContentType()));
 			repo.save(apartment);
 		}
 

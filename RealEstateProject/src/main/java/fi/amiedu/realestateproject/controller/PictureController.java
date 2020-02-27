@@ -33,6 +33,8 @@ public class PictureController {
 	    HttpStatus httpStatus;
 	    if(pic != null) {
 	    	httpStatus = HttpStatus.OK;
+	    	headers.setContentType(
+	    			MediaType.parseMediaType(picService.getContentType(id)));
 	    }
 	    else {
 	    	httpStatus = HttpStatus.NOT_FOUND;

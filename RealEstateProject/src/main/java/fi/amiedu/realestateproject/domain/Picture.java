@@ -22,26 +22,28 @@ public class Picture {
 
 	private String desc;
 	private String url;
+	private String contentType;
 	@Lob
     @Column(columnDefinition="BLOB")
 	private byte[] file;
 	
-//	@ManyToOne
-//	@JoinColumn(name="property_fk")
-//	private Property property;
-	
+	public Picture() {
+	}
 
-	public Picture(String desc, byte[] file/*, Property property*/) {
+	public Picture(String desc, byte[] file) {
 		super();
 		this.desc = desc;
 		this.file = file;
-//		this.url = url;
-//		this.property = property;
+		this.contentType = null;
+	}
+	public Picture(String desc, byte[] file, String contentType) {
+		super();
+		this.desc = desc;
+		this.file = file;
+		this.contentType = contentType;
 	}
 	
 	public String getUrl() {
-		// hardcoded 
-		//TODO: change later
 		return ServletUriComponentsBuilder.fromCurrentContextPath().toUriString() + "/picture/" + id;
 	}
 
@@ -49,8 +51,6 @@ public class Picture {
 		this.url = url;
 	}
 
-	public Picture() {
-	}
 
 	public Integer getId() {
 		return id;
@@ -60,13 +60,13 @@ public class Picture {
 		this.id = id;
 	}
 	
-//	public Property getProperty() {
-//		return property;
-//	}
-//	
-//	public void setProperty(Property property) {
-//		this.property = property;
-//	}
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
 
 	public String getDesc() {
 		return desc;
