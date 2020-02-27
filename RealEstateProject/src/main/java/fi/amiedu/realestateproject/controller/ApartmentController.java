@@ -60,7 +60,6 @@ public class ApartmentController {
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/apartment", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	//@CrossOrigin
 	public List< Property> getAllProperties(@RequestParam(required = false) String address) {
 		List<Property> properties;
 		if(address == null) {
@@ -90,17 +89,18 @@ public class ApartmentController {
 		apartmentService.addApartment(apartment);
 	}
 	
-	@RequestMapping(
-			method = RequestMethod.POST,
-			value = "/apartmentpic/{id}",
-			consumes = {"multipart/form-data"},
-			produces = MediaType.APPLICATION_JSON_VALUE
-			)
-		public boolean addApartmentPic(@PathVariable Integer id,
-		        @RequestParam("file") @Valid @NotNull @NotBlank MultipartFile file) {
-		return apartmentService.addApartmentPic(id, file);
-	}
+//	@RequestMapping(
+//			method = RequestMethod.POST,
+//			value = "/apartmentpic/{id}",
+//			consumes = {"multipart/form-data"},
+//			produces = MediaType.APPLICATION_JSON_VALUE
+//			)
+//		public boolean addPicToApartment(@PathVariable Integer id,
+//		        @RequestParam("file") @Valid @NotNull @NotBlank MultipartFile file) {
+//		return apartmentService.addPicToApartment(id, file);
+//	}
 
+	// This mainly used for initialization
 	@RequestMapping(
 			method = RequestMethod.POST,
 			value = "/apartmentpic",

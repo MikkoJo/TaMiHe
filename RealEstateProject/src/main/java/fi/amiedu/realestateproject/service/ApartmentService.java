@@ -97,8 +97,15 @@ public class ApartmentService {
 	}
 
 	public Property getProperty(Integer id) {
-		Property prop = repo.findById(id).get();
-		return prop;
+		Optional<Property> prop = repo.findById(id);
+		if(prop.isPresent()) {
+			Property property = prop.get();
+			return property;
+		}
+		else {
+			return null;
+		}
+
 	}
 
 	public void addApartment(Apartment apartment) {
@@ -108,6 +115,10 @@ public class ApartmentService {
 	public void updateApartment(Integer id, Apartment apartment) {
 		Optional<Property> found = repo.findById(id);
 		if (found.isPresent()) {
+			//preserve pictures and floorPlans, updated different way
+			Property oldApartment = found.get();
+			apartment.setPictures(oldApartment.getPictures());
+			apartment.setFloorPlans(oldApartment.getFloorPlans());
 			repo.save(apartment);
 		}
 
@@ -124,9 +135,12 @@ public class ApartmentService {
 		return repo.findByAddressStreetAddressContainingIgnoreCase(address);
 	}
 
-	public boolean addApartmentPic(Integer id, @Valid @NotNull @NotBlank MultipartFile file) {
+	public boolean addPicToApartment(Integer id, @Valid @NotNull @NotBlank MultipartFile file) {
 		Property prop = getProperty(id);
 		
+		if(prop == null) {
+			return false;
+		}
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 		try {
 			prop.addPicture(new Picture(fileName, file.getBytes(), file.getContentType()));
