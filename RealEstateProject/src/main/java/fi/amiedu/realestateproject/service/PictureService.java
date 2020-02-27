@@ -1,5 +1,7 @@
 package fi.amiedu.realestateproject.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,8 +15,14 @@ public class PictureService {
 	private PictureRepository repo;
 	
 	public byte[] getPicture(Integer id) {
-		Picture pic = repo.findById(id).get();
-		return pic.getFile();
+		Optional<Picture> pic = repo.findById(id);
+		if(pic.isPresent()) {
+			Picture picture = pic.get();
+			return picture.getFile();
+		}
+		else {
+			return null;
+		}
 	}
 	
 }

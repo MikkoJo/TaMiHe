@@ -19,15 +19,26 @@ public class PictureController {
 
 	@Autowired
 	private PictureService picService;
+	
+	private ResponseEntity<byte[]> responseEntity;
+	
 	@RequestMapping(method = RequestMethod.GET, // HTTP GET
 			value = "/picture/{id}", 
 			produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
 	public ResponseEntity<byte[]> getPicture(@PathVariable Integer id)  {
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.setCacheControl(CacheControl.noCache().getHeaderValue());
-	     
-	    ResponseEntity<byte[]> responseEntity = 
-	    		new ResponseEntity<>(picService.getPicture(id), headers, HttpStatus.OK);
+	    
+	    byte[] pic = picService.getPicture(id);
+	    HttpStatus httpStatus;
+	    if(pic != null) {
+	    	httpStatus = HttpStatus.OK;
+	    }
+	    else {
+	    	httpStatus = HttpStatus.NOT_FOUND;
+	    }
+	    	responseEntity = 
+	    			new ResponseEntity<>(pic, headers, httpStatus);
 	    return responseEntity;
 	}
 }
