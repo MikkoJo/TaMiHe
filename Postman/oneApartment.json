@@ -1,0 +1,22 @@
+{
+            "address": {
+            "streetAddress": "Mäkitie 6 A12",
+            "city": "Nurmijärvi",
+            "zipCode": "01870",
+            "country": "Suomi",
+            "coordinates": {
+                "x": 4,
+                "y": 6,
+                "z": 0
+            }
+        },
+        "pictures": [],
+        "floorPlans": [],
+        "price": 310000.0,
+        "area": 17000.0,
+        "desc": "Omakotitalo",
+        "floor": 1,
+        "totalFloors": 1,
+        "elevator": false,
+        "balcony": true
+    }

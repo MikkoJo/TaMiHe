@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "50dff614-1ddf-46a5-87db-3876f55ba5c3",
+		"name": "RealEstateProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/apartmentpic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/mikko/SchoolProject/TaMiHe/RealEstateProject/src/main/resources/static/test.jpg"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartmentpic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartmentpic"
+					]
+				},
+				"description": "Add one apartment with picture"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/apartment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"address\": {\n        \"id\": 2,\n        \"streetAddress\": \"Mäkitie 6 A12\",\n        \"city\": \"Nurmijärvi\",\n        \"zipCode\": \"01870\",\n        \"country\": \"Suomi\",\n        \"coordinates\": {\n            \"id\": 3,\n            \"x\": 4,\n            \"y\": 6,\n            \"z\": 0\n        }\n    },\n    \n    \"price\": 310000.0,\n    \"area\": 17000.0,\n    \"desc\": \"Kerrostalo\",\n    \"floor\": 1,\n    \"totalFloors\": 1,\n    \"elevator\": false,\n    \"balcony\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartment",
+						"1"
+					]
+				},
+				"description": "Get all Apartments"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/picture/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/picture/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picture",
+						"4"
+					]
+				},
+				"description": "get picture"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/apartmentpic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "files/test2.jpg"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartmentpic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartmentpic"
+					]
+				},
+				"description": "save apartment with jpg image"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/apartment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/apartment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartment"
+					]
+				},
+				"description": "get all apartments"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/apartmentpic/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": null,
+							"type": "file"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/apartmentpic/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apartmentpic",
+						"1"
+					]
+				},
+				"description": "add picture to existing apartment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/picture/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "files/test.jpg"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picture/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picture",
+						"1"
+					]
+				},
+				"description": "Add picture to existing apartment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/picture/1/4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "files/test2.jpg"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picture/1/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picture",
+						"1",
+						"4"
+					]
+				},
+				"description": "update picture"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/picture/1/4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": null,
+							"type": "file"
+						},
+						{
+							"key": "apartment",
+							"value": "{\n            \"address\": {\n            \"streetAddress\": \"Mäkitie 6 A12\",\n            \"city\": \"Nurmijärvi\",\n            \"zipCode\": \"01870\",\n            \"country\": \"Suomi\",\n            \"coordinates\": {\n                \"x\": 4,\n                \"y\": 6,\n                \"z\": 0\n            }\n        },\n        \"pictures\": [],\n        \"floorPlans\": [],\n        \"price\": 310000.0,\n        \"area\": 17000.0,\n        \"desc\": \"Omakotitalo\",\n        \"floor\": 1,\n        \"totalFloors\": 1,\n        \"elevator\": false,\n        \"balcony\": true\n    }",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picture/1/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picture",
+						"1",
+						"4"
+					]
+				},
+				"description": "delete picture"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

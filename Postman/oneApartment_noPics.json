@@ -1,0 +1,24 @@
+{
+    "id": 1,
+    "address": {
+        "id": 2,
+        "streetAddress": "Mäkitie 6 A12",
+        "city": "Nurmijärvi",
+        "zipCode": "01870",
+        "country": "Suomi",
+        "coordinates": {
+            "id": 3,
+            "x": 4,
+            "y": 6,
+            "z": 0
+        }
+    },
+    
+    "price": 310000.0,
+    "area": 17000.0,
+    "desc": "Kerrostalo",
+    "floor": 1,
+    "totalFloors": 1,
+    "elevator": false,
+    "balcony": true
+}
