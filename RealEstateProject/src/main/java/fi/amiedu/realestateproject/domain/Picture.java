@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Picture {
 
@@ -73,7 +75,8 @@ public class Picture {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-
+	
+	@JsonIgnore
 	public byte[] getFile() {
 		return file;
 	}
