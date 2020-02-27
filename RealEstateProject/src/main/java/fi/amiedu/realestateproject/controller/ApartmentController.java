@@ -4,19 +4,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import fi.amiedu.realestateproject.domain.Property;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.datasource.embedded.ConnectionProperties;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fi.amiedu.realestateproject.domain.Address;
 import fi.amiedu.realestateproject.domain.Apartment;
@@ -78,6 +90,36 @@ public class ApartmentController {
 		apartmentService.addApartment(apartment);
 	}
 	
+	@RequestMapping(
+			method = RequestMethod.POST,
+			value = "/apartmentpic/{id}",
+			consumes = {"multipart/form-data"},
+			produces = MediaType.APPLICATION_JSON_VALUE
+			)
+		public boolean addApartmentPic(@PathVariable Integer id,
+		        @RequestParam("file") @Valid @NotNull @NotBlank MultipartFile file) {
+		return apartmentService.addApartmentPic(id, file);
+	}
+
+	@RequestMapping(
+			method = RequestMethod.POST,
+			value = "/apartmentpic",
+			consumes = {"multipart/form-data"},
+			produces = MediaType.APPLICATION_JSON_VALUE
+			)
+	public boolean addApartmentPic(@RequestPart("apartment") @Valid String apartment,
+	        @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) {
+		ObjectMapper obj=new ObjectMapper();
+		Apartment apart;
+		try {
+			apart = obj.readValue(apartment, Apartment.class);
+			return apartmentService.addApartmentWithPic(apart, file);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+			return false;
+		} 
+	}
+
 	@RequestMapping(
 			method = RequestMethod.PUT,
 			value = "/apartment/{id}",
