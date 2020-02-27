@@ -10,9 +10,9 @@ public class Apartment extends Property {
 	private boolean elevator;
 	private boolean balcony;
 
-	public Apartment(/*Lot lot,*/ Address address, double price, double area, String desc,
+	public Apartment(Address address, double price, double area, String desc,
 			int floor, int totalFloors,	boolean elevator, boolean balcony) {
-		super(/*lot,*/ address, price, area, desc);
+		super(address, price, area, desc);
 		this.floor = floor;
 		this.totalFloors = totalFloors;
 		this.elevator = elevator;

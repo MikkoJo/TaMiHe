@@ -18,28 +18,20 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id; 
 
-//	@OneToOne(mappedBy = "address")
-//	private Property property;
 	private String streetAddress;
-//	private String houseNumber;
-//	private String doorNumber;
 	private String city;
 	private String zipCode;
 	private String country;
 	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, 
 	CascadeType.MERGE,
 	CascadeType.REMOVE})
-//	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="point_id")
 	private Point coordinates;
 
-	public Address(/*Property property,*/ String streetAddress/*, String houseNumber, String doorNumber*/,
+	public Address(String streetAddress,
 			String city, String zipCode, String country, Point coordinates) {
 		super();
-//		this.property = property;
 		this.streetAddress = streetAddress;
-//		this.houseNumber = houseNumber;
-//		this.doorNumber = doorNumber;
 		this.city = city;
 		this.zipCode = zipCode;
 		this.country = country;
@@ -56,15 +48,7 @@ public class Address {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-/*
-	public Property getProperty() {
-		return property;
-	}
 
-	public void setProperty(Property property) {
-		this.property = property;
-	}
-*/
 	public String getStreetAddress() {
 		return streetAddress;
 	}
@@ -72,23 +56,7 @@ public class Address {
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
 	}
-/*
-	public String getHouseNumber() {
-		return houseNumber;
-	}
 
-	public void setHouseNumber(String houseNumber) {
-		this.houseNumber = houseNumber;
-	}
-
-	public String getDoorNumber() {
-		return doorNumber;
-	}
-
-	public void setDoorNumber(String doorNumber) {
-		this.doorNumber = doorNumber;
-	}
-*/
 	public String getCity() {
 		return city;
 	}
@@ -143,18 +111,6 @@ public class Address {
 			builder.append(streetAddress);
 			builder.append(", ");
 		}
-		/*
-		if (houseNumber != null) {
-			builder.append("houseNumber=");
-			builder.append(houseNumber);
-			builder.append(", ");
-		}
-		if (doorNumber != null) {
-			builder.append("doorNumber=");
-			builder.append(doorNumber);
-			builder.append(", ");
-		}
-		*/
 		if (city != null) {
 			builder.append("city=");
 			builder.append(city);
@@ -171,7 +127,6 @@ public class Address {
 			builder.append(", ");
 		}
 		if (coordinates != null) {
-//			builder.append("coordinates=");
 			builder.append(getCoordinates());
 		}
 		builder.append("]");

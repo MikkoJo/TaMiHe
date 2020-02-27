@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.transaction.annotation.Transactional;
-
 
 // Point coordinates in EPSG:3857
 @Entity
@@ -16,20 +14,23 @@ public class Point {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-//	@OneToOne(mappedBy = "coordinates")
-//	private Address address;
 	private long x;
 	private long y;
 	private long z;
 	
-	public Point(/*Address address,*/ long x, long y, long z) {
-//		this.address = address;
+	public Point() {
+	}
+	
+	public Point(long x, long y) {
+		this.x = x;
+		this.y = y;
+		this.z = 0;
+	}
+
+	public Point(long x, long y, long z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
-	}
-	
-	public Point() {
 	}
 	
 	public Integer getId() {
@@ -37,19 +38,6 @@ public class Point {
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-/*	
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-*/
-	public Point(long x, long y) {
-		this.x = x;
-		this.y = y;
-		this.z = 0;
 	}
 	public long getX() {
 		return x;

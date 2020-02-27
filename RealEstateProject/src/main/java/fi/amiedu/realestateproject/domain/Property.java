@@ -20,14 +20,9 @@ public abstract class Property {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id; 
 
-/*	@OneToOne
-	@JoinColumn(name="lot_id", referencedColumnName = "id")
-	private Lot lot;
-*/	
 	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, 
 			CascadeType.MERGE,
 			CascadeType.REMOVE})
-//	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE }) //For testing
 	@JoinColumn(name="address_id", referencedColumnName = "id")
 	private Address address;
 	
@@ -37,7 +32,6 @@ public abstract class Property {
 	@JoinColumn(name="property_id", referencedColumnName = "id")
 	private List<Picture> pictures;
 	
-//	@OneToMany(mappedBy="property")
 	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, 
 			CascadeType.MERGE,
 			CascadeType.REMOVE})
@@ -47,8 +41,7 @@ public abstract class Property {
 	private double area;
 	private String desc;
 
-	public Property(/*Lot lot,*/ Address address, double price, double area, String desc) {
-		/*this.lot = lot;*/
+	public Property(Address address, double price, double area, String desc) {
 		this.address = address;
 		this.pictures = new ArrayList<>();
 		this.floorPlans = new ArrayList<>();
@@ -59,15 +52,7 @@ public abstract class Property {
 
 	public Property() {
 	}
-/*
-	public Lot getLot() {
-		return lot;
-	}
 
-	public void setLot(Lot lot) {
-		this.lot = lot;
-	}
-*/
 	public Address getAddress() {
 		return address;
 	}
@@ -144,28 +129,11 @@ public abstract class Property {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Property [");
-/*
-		if (lot != null) {
-			builder.append("lot=");
-			builder.append(lot);
-			builder.append(", ");
-		}
-*/
 		if (address != null) {
 			builder.append("address=");
 			builder.append(address);
 			builder.append(", ");
 		}
-//		if (pictures != null) {
-//			builder.append("pictures=");
-//			builder.append(pictures);
-//			builder.append(", ");
-//		}
-//		if (floorPlans != null) {
-//			builder.append("floorPlans=");
-//			builder.append(floorPlans);
-//			builder.append(", ");
-//		}
 		builder.append("price=");
 		builder.append(price);
 		builder.append(", ");
