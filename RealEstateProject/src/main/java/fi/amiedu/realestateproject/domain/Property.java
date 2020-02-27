@@ -35,7 +35,7 @@ public abstract class Property {
 	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, 
 			CascadeType.MERGE,
 			CascadeType.REMOVE})
-	@JoinColumn(name="property_id", referencedColumnName = "id")
+	@JoinColumn(name="property_floor_id", referencedColumnName = "id")
 	private List<Picture> floorPlans;
 	private double price;
 	private double area;
@@ -53,16 +53,16 @@ public abstract class Property {
 	public Property() {
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
 	public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Address getAddress() {
+		return address;
 	}
 
 	public void setAddress(Address address) {
@@ -131,7 +131,7 @@ public abstract class Property {
 		builder.append("Property [");
 		if (address != null) {
 			builder.append("address=");
-			builder.append(address);
+			builder.append(getAddress());
 			builder.append(", ");
 		}
 		builder.append("price=");
